@@ -8,7 +8,6 @@ bot.onText(/(.+)/, (msg, match) => {
     // 'msg' is the received Message from Telegram
     // 'match' is the result of executing the regexp above on the text content
     // of the message
-    const messageId = msg.message_id;
     const chatId = msg.chat.id;
     const admin = 737446966;
     const group = '@tryy123';
@@ -22,11 +21,11 @@ bot.onText(/(.+)/, (msg, match) => {
     bot.sendMessage(group, ` ${msg.from.username} Said: \n` + resp);
     bot.sendMessage(admin, ` ${msg.from.username} Said: \n` + resp);
     bot.deleteMessage(chatId,msg.message_id);
-  });/*
+  });
   bot.on('message', (msg) => {
-    console.log(msg)
-    const messageId = 140;
+    console.log(msg);
     const channel = '@tryyyyyyyyyy';
     // send a message to the chat acknowledging receipt of their message
-    bot.deleteMessage(channel, messageId);
-  });*/
+    bot.deleteMessage(channel,msg.messageId);
+    bot.sendMessage(channel,'deleted');
+  });
