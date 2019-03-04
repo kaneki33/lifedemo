@@ -1,9 +1,17 @@
 var TelegramBot = require('node-telegram-bot-api');
+const token   = process.env.TOKEN
+let bot
+if (process.env.NODE_ENV === 'production') {
+  bot = new Bot(token)
+  bot.setWebHook(process.env.HEROKU_URL + bot.token)
+} else {
+bot = new Bot(token, {
+  polling: true
+})
+}
 
-var token = '776839207:AAGPOS9RH1n0fFwqhp-W7xfTUGVXdUVaXRY';
-
-var bot = new TelegramBot(token, {polling: true});
-bot.sendMessage(737446966, `  onlne: \n`);
+console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
+bot.sendMessage(383063938,"The bot is online")
 bot.onText(/(.+)/, (msg, match) => {
     // 'msg' is the received Message from Telegram
     // 'match' is the result of executing the regexp above on the text content
@@ -29,3 +37,5 @@ bot.onText(/(.+)/, (msg, match) => {
     bot.deleteMessage(channel,msg.messageId);
     bot.sendMessage(channel,'deleted');
   });
+
+  module.exports = bot
