@@ -11,7 +11,7 @@ bot = new Bot(token, {
 }
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
-bot.sendMessage(383063938,"The bot is online")
+bot.sendMessage(737446966,"The bot is online")
 bot.onText(/(.+)/, (msg, match) => {
     // 'msg' is the received Message from Telegram
     // 'match' is the result of executing the regexp above on the text content
