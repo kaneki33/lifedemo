@@ -1,1 +1,1 @@
-web: node ./bin/www
+Worker: node.js
