@@ -29,7 +29,7 @@ bot.onText(/(.+)/, (msg, match) => {
     
     bot.sendMessage(channel, ` ${msg.from.username} :` + resp + `\n\n ${botName}`);
     bot.sendMessage(admin, ` ${msg.from.username} Said: \n` + resp);
-    response.writeHead("/" + channel);
+    
   });
   
   
