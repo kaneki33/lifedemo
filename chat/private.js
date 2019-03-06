@@ -16,7 +16,7 @@ module.exports = async (bot, msg) => {
             }
             break
       case msg.text == '/start':
-       const user = await User.findOne({id}).catch(err => false)
+        user = await User.findOne({id}).catch(err => false)
        if (!user) {
         bot.sendMessage(msg.chat.id, `‌‌‎
         Hello there, Please enter the name you want to be seen as in the channel....

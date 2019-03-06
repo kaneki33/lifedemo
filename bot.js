@@ -1,5 +1,5 @@
 const Bot     = require('node-telegram-bot-api');
-const User     = require('../models/user')
+const User     = require('./models/user')
 const private = require('./chat/private')
 const token   = process.env.TOKEN
 let bot
