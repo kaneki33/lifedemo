@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://Kaneki:zizo1998@ds217002.mlab.com:17002/nickname&w=1', { useNewUrlParser: true })
+mongoose.connect('mongodb://Kaneki:zizo1998@ds217002.mlab.com:17002/nickname?authSource=nickname&w=1&w=1', { useNewUrlParser: true })
 mongoose.Promise = global.Promise
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
