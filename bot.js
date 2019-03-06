@@ -1,7 +1,8 @@
 const Bot     = require('node-telegram-bot-api');
 const User     = require('./models/user')
 const private = require('./chat/private')
-const token   = process.env.TOKEN
+const token   = '776839207:AAGPOS9RH1n0fFwqhp-W7xfTUGVXdUVaXRY'
+// process.env.TOKEN
 let bot
 if (process.env.NODE_ENV === 'production') {
   bot = new Bot(token)
