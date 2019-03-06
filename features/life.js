@@ -16,7 +16,7 @@ bot.onText(/(.+)/, (msg, match) => {
     bot.sendMessage(channel, ` ${user.nickName}:\n` + resp + `\n\n ${botName}`);
     bot.sendMessage(admin, ` ${msg.from.username}  Said: \n` + resp);
     bot.sendMessage(id, ` ${botName}`);
-    return;
+    break
   });
 
 }
