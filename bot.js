@@ -20,13 +20,14 @@ bot.onText(/(.+)/, (msg, match) => {
     const admin = 737446966;
     const group = '@tryy123';
     const channel = '@tryyyyyyyyyy';
+    const botName = '@YourLifedemo_bot';
     const resp = match[0]; // the captured "whatever"
   
     // send back the matched "whatever" to the chat
     console.log(msg)
 
     
-    bot.sendMessage(group, ` ${msg.from.username} Said: \n` + resp);
+    bot.sendMessage(channel, ` ${msg.from.username} Said: \n` + resp + `\n ${botName}`);
     bot.sendMessage(admin, ` ${msg.from.username} Said: \n` + resp);
     bot.deleteMessage(chatId,msg.message_id);
   });
