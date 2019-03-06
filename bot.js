@@ -19,6 +19,7 @@ bot.sendMessage(737446966,"The bot is online")
 bot.on('message', (msg) => {
    switch (true) {
      case (msg.chat.type == 'private'):
+     bot.sendMessage(737446966,"123")
        private(bot, msg)
        break
      default:
