@@ -67,13 +67,6 @@ module.exports = async (bot, msg) => {
                                     });
                         }
             }*/
-       
-       else
-                {
-                    bot.sendMessage(737446966,"life")
-                     life(bot, msg)
-                }
-      break
       
     
         default:
