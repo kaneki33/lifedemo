@@ -4,16 +4,17 @@ module.exports = async (bot, msg) => {
     
     switch (true) 
         {
-            case msg.text != '/start' || !(msg.text.startsWith('Nick')) :
-            const user = await User.findOne({id}).catch(err => false)
-       if (!user) {
-        bot.sendMessage(msg.chat.id, `‌‌‎
-        Hello there, Please enter the name you want to be seen as in the channel....
-        • This is an irreversible action so please choose well. `)
-       } else {
-                 life(bot, msg)
-       }
-      break
+        case msg.text != '/start' || !(msg.text.startsWith('Nick')):
+        const user = await User.findOne({id}).catch(err => false)
+            if (!user) {
+                bot.sendMessage(msg.chat.id, `‌‌‎
+                Hello there, Please enter the name you want to be seen as in the channel....
+                in this way... "Nick ur_nickname"
+                • This is an irreversible action so please choose well. `)
+            } else {
+                        life(bot, msg)
+            }
+            break
       case msg.text == '/start':
        const user = await User.findOne({id}).catch(err => false)
        if (!user) {
