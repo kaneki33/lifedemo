@@ -8,7 +8,7 @@ module.exports = async (bot, msg) => {
         const user = await User.findOne({id}).catch(err => false)
             if (!user) {
                 bot.sendMessage(msg.chat.id, `‌‌‎
-                Hello there, Please enter the name you want to be seen as in the channel....
+                Hello 1there, Please enter the name you want to be seen as in the channel....
                 in this way... "Nick ur_nickname"
                 • This is an irreversible action so please choose well. `)
             } else {
@@ -18,8 +18,7 @@ module.exports = async (bot, msg) => {
       case msg.text == '/start':
         user = await User.findOne({id}).catch(err => false)
        if (!user) {
-        bot.sendMessage(msg.chat.id, `‌‌‎
-        Hello there, Please enter the name you want to be seen as in the channel....
+        bot.sendMessage(msg.chat.id, `‌‌‎Hello 2there, Please enter the name you want to be seen as in the channel....
         in this way... "Nick ur_nickname"
         • This is an irreversible action so please choose well. `)
        } else {
