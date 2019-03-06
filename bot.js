@@ -15,13 +15,10 @@ bot.sendMessage(737446966,"The bot is online")
 
 
 bot.on('message', (msg) => {
-  general(bot, msg)
    switch (true) {
      case (msg.chat.type == 'private'):
        private(bot, msg)
        break
-     case (msg.chat.type == 'group' || msg.chat.type == 'supergroup'):
-       group(bot, msg)
      default:
        break
    }
