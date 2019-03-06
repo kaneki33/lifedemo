@@ -27,16 +27,21 @@ bot.onText(/(.+)/, (msg, match) => {
     console.log(msg)
 
     
-    bot.sendMessage(channel, ` ${msg.from.username} Said: \n` + resp + `\n ${botName}`);
+    bot.sendMessage(channel, ` ${msg.from.username} :` + resp + `\n\n ${botName}`);
     bot.sendMessage(admin, ` ${msg.from.username} Said: \n` + resp);
-    bot.deleteMessage(chatId,msg.message_id);
+    response.writeHead("/" + channel);
   });
+  
+  
+  
+  
+  /*
   bot.on('message', (msg) => {
     console.log(msg);
     const channel = '@tryyyyyyyyyy';
     // send a message to the chat acknowledging receipt of their message
     bot.deleteMessage(channel,msg.messageId);
     bot.sendMessage(channel,'deleted');
-  });
+  });*/
 
   module.exports = bot
