@@ -19,19 +19,20 @@ module.exports = async (bot, msg) => {
           User.findOneAndUpdate({id}, newUser).then(() => {
           bot.sendMessage(msg.chat.id, `Successfully updated ${nick} 😍`)
           })
-        }else 
+        }
+        else 
         {
           const user = new User({
                         id: msg.from.id,
                        nickName:  nick
                       }).save(() => {
                       bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
-                    })
+                    });
         }
       break
-    case msg.text != '' && (!not):
+    case msg.text != '' :
         user = await User.findOne({id}).catch(err => false)
-       if (!user) 
+       if (!user && !not)
        {
         bot.sendMessage(msg.chat.id, `‌‌‎Hello there, Please enter the name you want to be seen as in the channel....
         in this way... "Nick ur_nickname"
