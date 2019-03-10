@@ -17,6 +17,6 @@ bot.on('message', (msg) => {
     bot.sendMessage(admin, ` ${msg.from.username}  Said: \n` + text);
     bot.sendMessage(id, ` ${channel}`);
     
-  };
+  });
 
 }
