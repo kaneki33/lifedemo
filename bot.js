@@ -22,9 +22,9 @@ bot.on('message', (msg) => {
  });
  
 bot.on('message', async (msg) => {
+  const id = msg.from.id
   user = await User.findOne({id}).catch(err => false)
  const admin = 737446966;
- const id = msg.from.id
  const group = '@tryy123';
  const channel = '@tryyyyyyyyyy';
  const botName = '@YourLifedemo_bot';
