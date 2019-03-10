@@ -3,7 +3,7 @@ const User     = require('../models/user')
 module.exports = async (bot, msg) => {
     const id = msg.from.id
     user = await User.findOne({id}).catch(err => false)
-bot.onText(/(.+)/, (msg, match) => {
+bot.onText(/(.+)/), (msg, match) => {
     const admin = 737446966;
     const group = '@tryy123';
     const channel = '@tryyyyyyyyyy';
@@ -17,6 +17,6 @@ bot.onText(/(.+)/, (msg, match) => {
     bot.sendMessage(admin, ` ${msg.from.username}  Said: \n` + resp);
     bot.sendMessage(id, ` ${channel}`);
     
-  });
+  };
 
 }
