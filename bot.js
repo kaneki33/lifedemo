@@ -18,14 +18,9 @@ bot.sendMessage(737446966,"The bot is online")
 
 
 bot.on('message', (msg) => {
-   switch (true) {
-     case (msg.chat.type == 'private'):
        private(bot, msg)
        life(bot, msg)
-       break
-     default:
-       break
-   }
+    
  });
  
  module.exports = bot
