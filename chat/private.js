@@ -5,6 +5,7 @@ module.exports = async (bot, msg) => {
     switch (true) 
         {
     case msg.text.startsWith('Nick'):
+                {
         let message = msg.text.split(" ")
             message.splice(0 , 1)
         const nick = message.join(" ")
@@ -18,7 +19,7 @@ module.exports = async (bot, msg) => {
                       }).save(() => {
                       bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
                     });
-        
+        }
       break
     case msg.text != '' :
         user = await User.findOne({id}).catch(err => false)
