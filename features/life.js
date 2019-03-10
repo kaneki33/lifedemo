@@ -9,7 +9,7 @@ bot.onText(/(.+)/, (msg, match) => {
     const channel = '@tryyyyyyyyyy';
     const botName = '@YourLifedemo_bot';
 
-    const resp = match[0]; 
+    var resp = match[0]; 
     console.log(msg)
 
     
