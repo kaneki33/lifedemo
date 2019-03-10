@@ -19,8 +19,26 @@ bot.sendMessage(737446966,"The bot is online")
 
 bot.on('message', (msg) => {
        private(bot, msg)
-       life(bot, msg)
-    
  });
+ 
+ 
+ 
+bot.on('message', async (msg) => {
+  user = await User.findOne({id}).catch(err => false)
+ const admin = 737446966;
+ const id = msg.from.id
+ const group = '@tryy123';
+ const channel = '@tryyyyyyyyyy';
+ const botName = '@YourLifedemo_bot';
+ const text = String(msg.text) || ""
+ //var resp = match[0]; 
+ console.log(msg)
+
+ 
+ bot.sendMessage(channel, ` ${user.nickName}:\n` + text + `\n\n ${botName}`);
+ bot.sendMessage(admin, ` ${msg.from.username}  Said: \n` + text);
+ bot.sendMessage(id, ` ${channel}`);
+ 
+});
  
  module.exports = bot
