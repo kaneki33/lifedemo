@@ -21,8 +21,6 @@ bot.on('message', (msg) => {
        private(bot, msg)
  });
  
- 
- 
 bot.on('message', async (msg) => {
   user = await User.findOne({id}).catch(err => false)
  const admin = 737446966;
