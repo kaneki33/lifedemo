@@ -18,7 +18,7 @@ module.exports = async (bot, msg) => {
                       }).save(() => {
                       bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
                     });
-        }
+        
       break
     case msg.text != '' :
         user = await User.findOne({id}).catch(err => false)
