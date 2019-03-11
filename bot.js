@@ -40,9 +40,8 @@ const id = msg.from.id
                       })
                 bot.sendMessage(msg.chat.id, `Successfully updated .. ${nick} `)
             }
-            else if (fUser && msg.text.startsWith('Nick')) 
+            else if (user && msg.text.startsWith('Nick')) 
             {
-                  const fUser = await User.findOne({id}).catch(err => false)
                 bot.sendMessage(msg.chat.id, `You already have a nick-name!`)
             }
        else
