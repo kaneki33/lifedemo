@@ -38,7 +38,7 @@ const id = msg.from.id
                       User.findOneAndUpdate({id}, newUser).then(() => {
                       bot.sendMessage(msg.chat.id, `Successfully updated ${nick} 😍`)
                       })
-                bot.sendMessage(msg.chat.id, `Successfully updated ${nick} `
+                bot.sendMessage(msg.chat.id, `Successfully updated ${nick} `)
             }
             else
             {
