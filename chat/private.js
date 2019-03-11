@@ -5,13 +5,7 @@ module.exports = async (bot, msg) => {
         {
             
     case msg.text.startsWith('Nick'):
-        let message = msg.text.split(" ")
-            message.splice(0 , 1)
-        const nick = message.join(" ")
-        const newUser = {
-          id: msg.from.id,
-          nickName:  nick
-          }
+        
         const fUser = await User.findOne({id}).catch(err => false)
         if (fUser) 
         {
@@ -19,6 +13,9 @@ module.exports = async (bot, msg) => {
         }
         else 
         {
+            let message = msg.text.split(" ")
+            message.splice(0 , 1)
+        const nick = message.join(" ")
           const user = new User({
                         id: msg.from.id,
                        nickName:  nick
