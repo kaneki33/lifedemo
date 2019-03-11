@@ -5,14 +5,6 @@ module.exports = async (bot, msg) => {
         {
             
     case msg.text.startsWith('Nick'):
-        
-        const fUser = await User.findOne({id}).catch(err => false)
-        if (fUser) 
-        {
-          bot.sendMessage(msg.chat.id, `You alraedy have a nick-name!`)
-        }
-        else 
-        {
             let message = msg.text.split(" ")
             message.splice(0 , 1)
         const nick = message.join(" ")
@@ -22,7 +14,7 @@ module.exports = async (bot, msg) => {
                       }).save(() => {
                       bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
                     });
-        }
+        
       break
     case msg.text != '' :
         user = await User.findOne({id}).catch(err => false)
