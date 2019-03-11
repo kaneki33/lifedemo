@@ -25,7 +25,7 @@ bot.on('message', (msg) =>
      bot.on('message', async (msg) => {
 const id = msg.from.id
             user = await User.findOne({id}).catch(err => false)
-            if(msg.text.startsWith('Nic'))
+            if(msg.text.startsWith('Cnick'))
               {
                           let message = msg.text.split(" ")
                           message.splice(0 , 1)
@@ -38,7 +38,7 @@ const id = msg.from.id
                       User.findOneAndUpdate({id}, newUser).then(() => {
                       bot.sendMessage(msg.chat.id, `Successfully updated ${nick} 😍`)
                       })
-                bot.sendMessage(msg.chat.id, `Successfully updated ${nick} `)
+                bot.sendMessage(msg.chat.id, `Successfully updated .. ${nick} `)
             }
             else
             {
