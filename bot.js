@@ -3,7 +3,6 @@ const User     = require('./models/user')
 const private = require('./chat/private')
 const life     = require('./features/life')
 const token   = '776839207:AAGPOS9RH1n0fFwqhp-W7xfTUGVXdUVaXRY'
-const id = msg.from.id
 // process.env.TOKEN
 let bot
 if (process.env.NODE_ENV === 'production') {
@@ -24,7 +23,7 @@ bot.on('message', (msg) =>
      });
 
      bot.on('message', async (msg) => {
-
+const id = msg.from.id
             user = await User.findOne({id}).catch(err => false)
             if(msg.text.startsWith('Nic'))
               {
@@ -45,7 +44,7 @@ bot.on('message', (msg) =>
                     
                       
                     const admin = 737446966;
-                    
+                    const id = msg.from.id
                     const channel = '@tryyyyyyyyyy';
                     const botName = '@YourLifedemo_bot';
                     const text = String(msg.text) || ""
