@@ -9,7 +9,7 @@ module.exports = async (bot, msg) => {
         const fUser = await User.findOne({id}).catch(err => false)
         if (fUser) 
         {
-          bot.sendMessage(msg.chat.id, `You alraedy have a nick-name`)
+          bot.sendMessage(msg.chat.id, `You alraedy have a nick-name!`)
         }
         else 
         {
