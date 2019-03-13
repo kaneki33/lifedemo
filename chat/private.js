@@ -22,9 +22,10 @@ module.exports = async (bot, msg) => {
                        nickName:  nick
                       }).save(() => {
                       bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
-                      bot.sendMessage(msg.chat.id, `Say Hi `)
+                      bot.sendMessage(msg.chat.id, `Say Anything .. Have fun! `)
                     });
-                    bot.sendMessage(admin, `${nick} joined us say hello guys .. Welcome ${nick} `);
+                    bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
+                    bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
 
         }
       break
@@ -33,10 +34,13 @@ module.exports = async (bot, msg) => {
        if (!user )
             {
                 bot.sendMessage(msg.chat.id, `‌‌‎Hello there🤗🤗, please enter the name you want to be seen as in the #channel....
-                                            👉This way "Nick yournickname".👈
-                                            This is an irreversible action‼️
-                                            So please choose well. 
-                                            Thank you😊😊`)
+👉This way "Nick yournickname".👈
+
+This is an irreversible action‼️
+
+So please choose well. 
+
+Thank you😊😊`)
             } 
             
     
