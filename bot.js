@@ -56,7 +56,7 @@ const id = msg.from.id
             
                     
                     bot.sendMessage(channel, ` ${user.nickName}:\n` + text + `\n\n ${botName}`);
-                    bot.sendMessage(admin, ` ${msg.from.username}  Said: \n` + text);
+                    bot.sendMessage(admin, ` ${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName}  Said: \n` + text);
                     bot.sendMessage(id, ` ${channel}`);
                     
             }
