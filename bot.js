@@ -3,6 +3,7 @@ const User     = require('./models/user')
 const private = require('./chat/private')
 const life     = require('./features/life')
 const token   = '776839207:AAGPOS9RH1n0fFwqhp-W7xfTUGVXdUVaXRY'
+
 // process.env.TOKEN
 let bot
 if (process.env.NODE_ENV === 'production') {
@@ -24,6 +25,10 @@ bot.on('message', (msg) =>
 
      bot.on('message', async (msg) => {
 const id = msg.from.id
+const admin = 737446966;
+const channel = '@tryyyyyyyyyy';
+const botName = '@YourLifedemo_bot';
+const text = String(msg.text) || ""
             user = await User.findOne({id}).catch(err => false)
             if(msg.text.startsWith('Cnick'))
               {
@@ -39,24 +44,19 @@ const id = msg.from.id
                       bot.sendMessage(msg.chat.id, `Successfully updated ${nick} 😍`)
                       })
                 bot.sendMessage(msg.chat.id, `Successfully updated .. ${nick} `)
+                bot.sendMessage(admin, `@${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName} \n changed their nickname`)
             }
             else if (user && msg.text.startsWith('Nick')) 
             {
+              
                 bot.sendMessage(msg.chat.id, `You already have a nick-name!`)
+              bot.sendMessage(admin, `@${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName} \n tried to change their nickname`)
             }
        else
        {
-                    const admin = 737446966;
-                    const id = msg.from.id
-                    const channel = '@tryyyyyyyyyy';
-                    const botName = '@YourLifedemo_bot';
-                    const text = String(msg.text) || ""
-                    //var resp = match[0]; 
                     console.log(msg)
-            
-                    
                     bot.sendMessage(channel, ` ${user.nickName}:\n` + text + `\n\n ${botName}`);
-                    bot.sendMessage(admin, ` ${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName}  Said: \n` + text);
+                    bot.sendMessage(admin, ` @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName}  Said: \n` + text);
                     bot.sendMessage(id, ` ${channel}`);
                     
             }
