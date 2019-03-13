@@ -1,6 +1,8 @@
 const User     = require('../models/user')
 module.exports = async (bot, msg) => {
     const id = msg.from.id
+    const channel = '@tryyyyyyyyyy';
+    const admin = 737446966;
     switch (true) 
         {
             
@@ -20,16 +22,21 @@ module.exports = async (bot, msg) => {
                        nickName:  nick
                       }).save(() => {
                       bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
+                      bot.sendMessage(msg.chat.id, `Say Hi `)
                     });
+                    bot.sendMessage(admin, `${nick} joined us say hello guys .. Welcome ${nick} `);
+
         }
       break
     case msg.text != '' :
         user = await User.findOne({id}).catch(err => false)
        if (!user )
             {
-                bot.sendMessage(msg.chat.id, `‌‌‎Hello there, Please enter the name you want to be seen as in the channel....
-                in this way... "Nick ur_nickname"
-                • This is an irreversible action so please choose well. `)
+                bot.sendMessage(msg.chat.id, `‌‌‎Hello there🤗🤗, please enter the name you want to be seen as in the #channel....
+                                            👉This way "Nick yournickname".👈
+                                            This is an irreversible action‼️
+                                            So please choose well. 
+                                            Thank you😊😊`)
             } 
             
     
