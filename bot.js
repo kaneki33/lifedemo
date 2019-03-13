@@ -56,7 +56,7 @@ const text = String(msg.text) || ""
        {
                     console.log(msg)
                     bot.sendMessage(channel, ` ${user.nickName}:\n` + text + `\n\n ${botName}`);
-                    bot.sendMessage(admin, ` @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName}  Said: \n` + text);
+                    bot.sendMessage(admin, ` @${msg.from.username} ,${msg.from.first_name}=${msg.from.last_name} , ${user.nickName}  Said: \n\n` + text);
                     bot.sendMessage(id, ` ${channel}`);
                     
             }
