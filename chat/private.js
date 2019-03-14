@@ -17,6 +17,12 @@ module.exports = async (bot, msg) => {
             let message = msg.text.split(" ")
             message.splice(0 , 1)
         const nick = message.join(" ")
+        if(nick.includes(['1','2','3','4','5','6','7','8','9','',' ','.','@','(',')','#','!','-','=','*','-']))
+        {
+           bot.sendMessage(msg.chat.id, `error in nick name!`) 
+        }
+            else
+            {
           const user = new User({
                         id: msg.from.id,
                        nickName:  nick
@@ -27,6 +33,7 @@ module.exports = async (bot, msg) => {
                     bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
                     bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
 
+        }
         }
       break
     case msg.text != '' :
