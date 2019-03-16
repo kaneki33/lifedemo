@@ -16,7 +16,7 @@ switch (true){
             message.splice(0 , 1)
             const nick = message.join(" ")
            // if(nick.includes(['1','2','3','4','5','6','7','8','9','',' ','.','@','(',')','#','!','-','=','*','-']))
-            if(nick.match(/\d/|/\w/))
+            if(nick.match(/\d/) && nick.match(/\w/))
             {
                 const user = new User({
                     id: msg.from.id,
