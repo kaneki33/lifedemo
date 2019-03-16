@@ -17,9 +17,10 @@ module.exports = async (bot, msg) => {
             let message = msg.text.split(" ")
             message.splice(0 , 1)
         const nick = message.join(" ")
-        if(nick.includes(['1','2','3','4','5','6','7','8','9','',' ','.','@','(',')','#','!','-','=','*','-']))
+       // if(nick.includes(['1','2','3','4','5','6','7','8','9','',' ','.','@','(',')','#','!','-','=','*','-']))
+        if(nick.match(/\d/))
         {
-           bot.sendMessage(msg.chat.id, `error in nick name!`) 
+           bot.sendMessage(msg.chat.id, `Your nick name can not include numbers!\nTry another one!`) 
         }
             else
             {
