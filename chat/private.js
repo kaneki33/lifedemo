@@ -16,7 +16,7 @@ switch (true){
             message.splice(0 , 1)
             const nick = message.join(" ")
            // if(nick.includes(['1','2','3','4','5','6','7','8','9','',' ','.','@','(',')','#','!','-','=','*','-']))
-            if((nick.match(/\d/) && nick.match(/\w/)) || nick.match(/\w/))
+            if((nick.match(/\d/) && nick.match(/\w/)))
             {
                 const user = new User({
                     id: msg.from.id,
@@ -26,7 +26,7 @@ switch (true){
                               bot.sendMessage(msg.chat.id, `Say Anything .. Have fun!\n${channel}`)
                         });
                     bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
-                    bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
+                    //bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
             }
             else
             {
