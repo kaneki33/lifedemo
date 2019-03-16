@@ -18,23 +18,24 @@ module.exports = async (bot, msg) => {
             message.splice(0 , 1)
         const nick = message.join(" ")
        // if(nick.includes(['1','2','3','4','5','6','7','8','9','',' ','.','@','(',')','#','!','-','=','*','-']))
-        if(nick.match(/\d/))
+        if((nick.match(/\d/) && nick.match(/\w/) || nick.match(/\w/))
         {
-           bot.sendMessage(msg.chat.id, `Your nick name can not include numbers!\nTry another one!`) 
-        }
-            else
-            {
-          const user = new User({
+            const user = new User({
                         id: msg.from.id,
                        nickName:  nick
                       }).save(() => {
-                      bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
-                      bot.sendMessage(msg.chat.id, `Say Anything .. Have fun! `)
+                      bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`);
+                      bot.sendMessage(msg.chat.id, `Say Anything .. Have fun!\n${channel}`)
                     });
                     bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
                     bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
 
         }
+        }
+            else
+            {
+           bot.sendMessage(msg.chat.id, `Your nick name can not include numbers!\nTry another one!`)
+          
         }
       break
     case msg.text != '' :
