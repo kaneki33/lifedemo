@@ -16,7 +16,7 @@ switch (true){
             message.splice(0 , 1)
             const nick = message.join(" ")
            // if(nick.includes(['1','2','3','4','5','6','7','8','9','',' ','.','@','(',')','#','!','-','=','*','-']))
-            if( (/\d/.test(nick) && /\w/.test(nick)) || /\w/.test(nick) )
+            if( (/\d/.test(nick) && /\w/.test(nick)) || /[A-z]/.test.(nick))
             {
                 const user = new User({
                     id: msg.from.id,
@@ -28,7 +28,7 @@ switch (true){
                     bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
                     //bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
             }
-            else
+            else if(/\W/.test(nick))
             {
                 bot.sendMessage(msg.chat.id, `Your nick name can not only be numbers!\nTry again!`)
             }
