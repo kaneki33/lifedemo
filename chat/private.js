@@ -3,8 +3,7 @@ module.exports = async (bot, msg) => {
 const id = msg.from.id
 const channel = '@tryyyyyyyyyy';
 const admin = 737446966;
-switch (true) 
-    {        
+switch (true){        
     case msg.text.startsWith('Nick'):
         const fUser = await User.findOne({id}).catch(err => false)
         if (fUser) 
@@ -33,6 +32,7 @@ switch (true)
             {
                 bot.sendMessage(msg.chat.id, `Your nick name can not only be numbers!\nTry again!`)
             }
+        }
         break
     case msg.text != '' :
         user = await User.findOne({id}).catch(err => false)
@@ -50,5 +50,4 @@ switch (true)
     
     default:
         break
-        }
     }
