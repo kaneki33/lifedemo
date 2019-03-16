@@ -34,7 +34,7 @@ module.exports = async (bot, msg) => {
         }
             else
             {
-           bot.sendMessage(msg.chat.id, `Your nick name can not include numbers!\nTry another one!`)
+           bot.sendMessage(msg.chat.id, `Your nick name can not only be numbers!\nTry again!`)
           
         }
       break
