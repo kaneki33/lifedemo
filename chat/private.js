@@ -24,13 +24,12 @@ module.exports = async (bot, msg) => {
                         id: msg.from.id,
                        nickName:  nick
                       }).save(() => {
-                      bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`);
+                      bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
                       bot.sendMessage(msg.chat.id, `Say Anything .. Have fun!\n${channel}`)
                     });
                     bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
                     bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
-
-        }
+                }
         }
             else
             {
