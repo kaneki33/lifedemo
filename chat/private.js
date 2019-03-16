@@ -28,9 +28,9 @@ switch (true){
                     bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
                     //bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
             }
-            else if(/\W/.test(nick))
+            else
             {
-                bot.sendMessage(msg.chat.id, `Your nick name can not only be numbers!\nTry again!`)
+                bot.sendMessage(msg.chat.id, `Your nick name can not only be numbers and can not contain special characters!\nTry again!`)
             }
         }
         break
