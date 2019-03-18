@@ -31,7 +31,7 @@ switch (true){
                               bot.sendMessage(msg.chat.id, `Say Anything .. Have fun!\n${channel}`)
                         });
                     bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
-                    //bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
+                    bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
                  }
                 else
                 {
