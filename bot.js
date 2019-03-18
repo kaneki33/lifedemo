@@ -20,6 +20,8 @@ bot.sendMessage(737446966,"The bot is online")
 
 bot.on('message', (msg) => 
        {
+  const text = String(msg.text) || ""
+  bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
        private(bot, msg)
      });
 
