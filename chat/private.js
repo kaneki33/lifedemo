@@ -31,7 +31,7 @@ switch (true){
                               bot.sendMessage(msg.chat.id, `Say Anything .. Have fun!\n${channel}`)
                         });
                     bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
-                    //bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
+                    bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
                  }
                 else
                 {
@@ -43,10 +43,11 @@ switch (true){
     case msg.text != '' :
         user = await User.findOne({id}).catch(err => false)
         if (!user ){
-            bot.sendMessage(msg.chat.id, `‌‌‎Hello there🤗🤗, please enter the name you want to be seen as in the #channel....
-👉This way "Nick yournickname".👈
+            bot.sendMessage(msg.chat.id, `‌‌‎Hello there🤗🤗, please enter the name you want to be seen with in the #channel....
 
-This is an irreversible action‼️
+👉This way "Nick X".👈 ("X" is your Nickname)
+
+‼️This is an irreversible action‼️
 
 So please choose well. 
 
