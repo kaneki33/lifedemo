@@ -32,22 +32,37 @@ const channel = '@tryyyyyyyyyy';
 const botName = '@YourLifedemo_bot';
 const text = String(msg.text) || ""
             user = await User.findOne({id}).catch(err => false)
-            if(msg.text.startsWith('Cnick'))
+            if(msg.text.startsWith('makeme'))
               {
-                          let message = msg.text.split(" ")
-                          message.splice(0 , 1)
-                      const nick = message.join(" ")
-                      const newUser = {
-                        id: msg.from.id,
-                        nickName:  nick
-                        }
+                  let message = msg.text.split(" ")
+                  message.splice(0 , 1)
+                  const nick = message.join(" ")
+                  if(/^[a-zA-Z0-9]*$/.test(nick) == false)
+                  {
+                      bot.sendMessage(msg.chat.id, `Your nick name can not contain special characters!\nTry again!`)
+                  }
+                  else
+                  {
+                      if(/[A-z]/.test(nick) == true)
+                      {
+                          const newUser = {
+                            id: msg.from.id,
+                            nickName:  nick
+                            }
 
-                      User.findOneAndUpdate({id}, newUser).then(() => {
-                      bot.sendMessage(msg.chat.id, `Successfully updated ${nick} 😍`)
-                      })
-                bot.sendMessage(msg.chat.id, `Successfully updated .. ${nick} `)
-                bot.sendMessage(admin, `@${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName} \n changed their nickname`)
-            }
+                          User.findOneAndUpdate({id}, newUser).then(() => {
+                          bot.sendMessage(msg.chat.id, `Successfully updated ${nick} 😍`)
+                          })
+                            bot.sendMessage(msg.chat.id, `Successfully updated .. ${nick} `)
+                            bot.sendMessage(admin, `@${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName} \n changed their nickname`)
+                       }
+                      else
+                        {
+                            bot.sendMessage(msg.chat.id, `Your nick name must contain a letter!\nTry again!`)
+                        }
+                    }
+              }
+            
             else if (user && msg.text.startsWith('Nick')) 
             {
               
