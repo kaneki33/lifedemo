@@ -21,7 +21,7 @@ switch (true){
             }
             else
             {
-                if(/^[A-Za-z]*$/.test(nick) == false)
+                if(/^[a-zA-Z]*$/.test(nick) == false)
                 {
                 const user = new User({
                     id: msg.from.id,
@@ -44,13 +44,13 @@ switch (true){
         user = await User.findOne({id}).catch(err => false)
         if (!user ){
             bot.sendMessage(msg.chat.id, `‌‌‎Hello there🤗🤗, please enter the name you want to be seen as in the #channel....
-            👉This way "Nick yournickname".👈
+👉This way "Nick yournickname".👈
 
-            This is an irreversible action‼️
+This is an irreversible action‼️
 
-            So please choose well. 
+So please choose well. 
 
-            Thank you😊😊`)
+Thank you😊😊`)
         } 
             
     
