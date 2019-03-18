@@ -21,7 +21,7 @@ switch (true){
             }
             else
             {
-                if(/[a-Z]/.test(nick) == true)
+                if(/[A-z]/.test(nick) == true)
                 {
                 const user = new User({
                     id: msg.from.id,
