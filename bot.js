@@ -32,7 +32,7 @@ const channel = '@tryyyyyyyyyy';
 const botName = '@YourLifedemo_bot';
 const text = String(msg.text) || ""
             user = await User.findOne({id}).catch(err => false)
-            if(msg.text.startsWith('makeme'))
+            if(msg.text.startsWith('Makeme'))
               {
                   let message = msg.text.split(" ")
                   message.splice(0 , 1)
@@ -54,7 +54,7 @@ const text = String(msg.text) || ""
                           bot.sendMessage(msg.chat.id, `Successfully updated ${nick} 😍`)
                           })
                             bot.sendMessage(msg.chat.id, `Successfully updated .. ${nick} `)
-                            bot.sendMessage(admin, `@${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName} \n changed their nickname`)
+                            bot.sendMessage(admin, `@${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} ,${user.nickName} to ${nick} \n changed their nickname`)
                        }
                       else
                         {
