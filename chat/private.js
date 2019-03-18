@@ -45,13 +45,15 @@ switch (true){
         if (!user ){
             bot.sendMessage(msg.chat.id, `‌‌‎Hello there🤗🤗, please enter the name you want to be seen with in the #channel....
 
-👉This way "Nick X".👈 ("X" is your Nickname)
-
+👉This way "Nick X".👈 
+("X" is your Nickname)
 ‼️This is an irreversible action‼️
 
 So please choose well. 
 
 Thank you😊😊`)
+          bot.sendMessage(msg.chat.id, `‌‌Nickname ስትመርጡ መጀመርያ Nick ብላቹ ጽፋቹ ከዛ ምትፈልጉትን ስም መርጣቹ ትጽፋላቹ!!!
+ለምሳሌ: Nick Abushu ("Abushu" ሚለው nickname ነው፡፡`);
         } 
             
     
