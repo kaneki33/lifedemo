@@ -15,9 +15,14 @@ switch (true){
             let message = msg.text.split(" ")
             message.splice(0 , 1)
             const nick = message.join(" ")
-           // if(nick.includes(['1','2','3','4','5','6','7','8','9','',' ','.','@','(',')','#','!','-','=','*','-']))
-            if( (/\d/.test(nick) && /[A-z]/.test(nick) && !/\W/.test(nick)) || /[A-z]/.test(nick) )
+            if(/^[a-zA-Z0-9]*$/.test(nick) == false)
             {
+                bot.sendMessage(msg.chat.id, `Your nick name can not contain special characters!\nTry again!`)
+            }
+            else
+            {
+                if(/[A-Za-z]*$/.test(nick))
+                {
                 const user = new User({
                     id: msg.from.id,
                     nickName:  nick
@@ -27,10 +32,11 @@ switch (true){
                         });
                     bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
                     //bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
-            }
-            else
-            {
-                bot.sendMessage(msg.chat.id, `Your nick name can not only be numbers and can not contain special characters!\nTry again!`)
+                 }
+                else
+                {
+                    bot.sendMessage(msg.chat.id, `Your nick name must contain a letter!\nTry again!`)
+                }
             }
         }
         break
