@@ -26,7 +26,7 @@ switch (true){
                 const user = new User({
                     id: msg.from.id,
                     nickName:  nick
-                    }).save(() => {
+                    }).save(() =>{
                               bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
                               bot.sendMessage(msg.chat.id, `Say Anything .. Have fun!\n${channel}`)
                         });
