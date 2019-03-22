@@ -1,6 +1,6 @@
 const User = require('../models/user')
 switch (true) {
-    case text.startsWith('\/Send'):
+    case msg.text.startsWith('\/Send'):
 
         const matches = text.match(/\/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
         var idd = matches[2];
