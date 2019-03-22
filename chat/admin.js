@@ -1,8 +1,8 @@
 const User = require('../models/user')
 switch (true) {
-    case msg.text.startsWith('\/Send'):
+    case msg.text.startsWith('\/send'):
 
-        const matches = text.match(/\/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
+        const matches = text.match(/\/send(\s+)(.+)(\s+)-(\s+)(.+)/)
         var idd = matches[2];
         var txt = matches[5];
         bot.sendMessage(idd, txt);
