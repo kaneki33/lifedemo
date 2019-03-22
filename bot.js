@@ -19,6 +19,7 @@ bot.sendMessage(737446966,"The bot is online")
 
 bot.on('message', async (msg) => 
        {
+        const id = msg.from.id
          const fSubID = await SubID.findOne({id}).catch(err => false)
             if (!fSubID) 
             {
