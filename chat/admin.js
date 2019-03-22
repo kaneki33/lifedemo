@@ -8,7 +8,7 @@ switch (true) {
         var txt = matches[5];
         bot.sendMessage(idd, txt);
 
-    case text.startsWith('\/Del'):
+    case msg.text.startsWith('\/Del'):
 
         try {
           const matches = text.match(/\/Del(\s+)(.+)/)
