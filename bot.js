@@ -17,7 +17,7 @@ console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
 bot.sendMessage(737446966,"The bot is online")
 
 
-bot.on('message', (msg) => 
+bot.on('message', async (msg) => 
        {
          const fSubID = await SubID.findOne({id}).catch(err => false)
             if (!fSubID) 
