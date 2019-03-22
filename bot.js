@@ -23,7 +23,7 @@ bot.on('message', async (msg) =>
          const fSubID = await SubID.findOne({id}).catch(err => false)
             if (!fSubID) 
             {
-              const subid =  new SubID({
+               new SubID({
                       id: msg.from.id,
                       Firstname: msg.from.first_name
                   }).save(() => 
@@ -77,7 +77,7 @@ const text = String(msg.text) || ""
                        }
                       else
                         {
-                            bot.sendMessage(msg.chat.id, `Your nick name must contain a letter!\nTry again!`)
+                            bot.sendMessage(msg.chat.id, `1Your nick name must contain a letter!\nTry again!`)
                         }
                     }
               }
