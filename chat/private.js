@@ -7,6 +7,7 @@ const adminid = 737446966;
 switch (true){
     case (msg.from.id == '737446966' || msg.from.id == '343675433'):
         admin(bot, msg)
+        break
     case msg.text.startsWith('Nick'):
         const fUser = await User.findOne({id}).catch(err => false)
         if (fUser) 
