@@ -1,8 +1,6 @@
 const Bot     = require('node-telegram-bot-api');
 const User     = require('./models/user')
 const private = require('./chat/private')
-const admin = require('./chat/admin')
-const life     = require('./features/life')
 const token   = '776839207:AAGPOS9RH1n0fFwqhp-W7xfTUGVXdUVaXRY'
 // process.env.TOKEN
 let bot
@@ -22,16 +20,9 @@ bot.on('message', (msg) =>
        {
         const text = String(msg.text) || ""
         bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
-        
-        if((msg.from.id == '737446966' || msg.from.id == '383063938'))
-              {
-              admin(bot, msg)
-              }
-        else
-              {  
-              private(bot, msg)
-              }
-     });
+       
+        private(bot, msg)
+       });
 
      bot.on('message', async (msg) => {
 const id = msg.from.id
