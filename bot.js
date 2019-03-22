@@ -1,7 +1,7 @@
 const Bot     = require('node-telegram-bot-api');
 const User     = require('./models/user')
 const private = require('./chat/private')
-const private = require('./chat/admin')
+const admin = require('./chat/admin')
 const life     = require('./features/life')
 const token   = '776839207:AAGPOS9RH1n0fFwqhp-W7xfTUGVXdUVaXRY'
 // process.env.TOKEN
