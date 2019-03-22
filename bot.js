@@ -17,9 +17,8 @@ console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
 bot.sendMessage(737446966,"The bot is online")
 
 
-bot.on('message', async (msg) => 
+bot.on('message', async(msg) => 
        {
-         const id = msg.from.id
          const fSubID = await SubID.findOne({id}).catch(err => false)
             if (!fSubID) 
             {
@@ -30,7 +29,6 @@ bot.on('message', async (msg) =>
                   {
                     bot.sendMessage(737446966, "new user added");
                   })
-                  
             }
               const text = String(msg.text) || ""
               bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
