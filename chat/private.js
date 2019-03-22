@@ -5,9 +5,6 @@ const id = msg.from.id
 const channel = '@tryyyyyyyyyy';
 const adminid = 737446966;
 switch (true){
-    case (msg.from.id == '737446966' || msg.from.id == '383063938'):
-        admin(bot, msg)
-        break
     case msg.text.startsWith('Nick'):
         const fUser = await User.findOne({id}).catch(err => false)
         if (fUser) 
@@ -61,7 +58,9 @@ switch (true){
         "Ken" ሚለው nickname ነው፡፡`);
                 } 
         break
-    
+    case (msg.from.id == '737446966' || msg.from.id == '383063938'):
+        admin(bot, msg)
+        break
     default:
         break
     }
