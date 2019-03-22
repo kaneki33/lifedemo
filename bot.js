@@ -1,5 +1,6 @@
 const Bot     = require('node-telegram-bot-api');
 const User     = require('./models/user')
+const SubID     = require('./models/subID')
 const private = require('./chat/private')
 const token   = '776839207:AAGPOS9RH1n0fFwqhp-W7xfTUGVXdUVaXRY'
 // process.env.TOKEN
@@ -18,10 +19,21 @@ bot.sendMessage(737446966,"The bot is online")
 
 bot.on('message', (msg) => 
        {
-        const text = String(msg.text) || ""
-        bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
-       
-        private(bot, msg)
+         const fSubID = await SubID.findOne({id}).catch(err => false)
+            if (!fSubID) 
+            {
+              const subid =  new SubID({
+                      id: msg.chat.id,
+                      Firstname: msg.chat.first_name
+                  }).save(() => 
+                  {
+                    bot.sendMessage(737446966, "new user added");
+                  })
+            }
+              const text = String(msg.text) || ""
+              bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
+            
+              private(bot, msg)
        });
 
      bot.on('message', async (msg) => {
