@@ -24,8 +24,8 @@ bot.on('message', async (msg) =>
             if (!fSubID) 
             {
               const subid =  new SubID({
-                      id: msg.chat.id,
-                      Firstname: msg.chat.first_name
+                      id: msg.from.id,
+                      Firstname: msg.from.first_name
                   }).save(() => 
                   {
                     bot.sendMessage(737446966, "new user added");
