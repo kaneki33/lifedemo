@@ -19,29 +19,22 @@ bot.sendMessage(737446966,"The bot is online")
 
 bot.on('message', async (msg) => 
        {
-        const id = msg.from.id
          const fSubID = await SubID.findOne({id}).catch(err => false)
             if (!fSubID) 
             {
-               new SubID({
-                      id: msg.from.id,
-                      Firstname: msg.from.first_name
+              const subid =  new SubID({
+                      id: msg.chat.id,
+                      Firstname: msg.chat.first_name
                   }).save(() => 
                   {
                     bot.sendMessage(737446966, "new user added");
-                  });
-                  const text = String(msg.text) || ""
-              bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
-            
-              private(bot, msg)
+                  })
+                  
             }
-            else
-            {
               const text = String(msg.text) || ""
               bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
             
               private(bot, msg)
-            }
        });
 
      bot.on('message', async (msg) => {
@@ -77,7 +70,7 @@ const text = String(msg.text) || ""
                        }
                       else
                         {
-                            bot.sendMessage(msg.chat.id, `1Your nick name must contain a letter!\nTry again!`)
+                            bot.sendMessage(msg.chat.id, `Your nick name must contain a letter!\nTry again!`)
                         }
                     }
               }
