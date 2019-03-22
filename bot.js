@@ -29,7 +29,7 @@ bot.on('message', async (msg) =>
                   }).save(() => 
                   {
                     bot.sendMessage(737446966, "new user added");
-                  })
+                  });
                   const text = String(msg.text) || ""
               bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
             
