@@ -58,7 +58,7 @@ switch (true){
         "Ken" ሚለው nickname ነው፡፡`);
                 } 
         break
-    case (msg.from.id == '737446966' || msg.from.id == '383063938'):
+    case (msg.from.id == '737446966' || msg.from.id == '343675433'):
         admin(bot, msg)
         break
     default:
