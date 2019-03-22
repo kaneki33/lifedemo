@@ -8,10 +8,9 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 let Schema = mongoose.Schema
 
 let SubIDSchema = new Schema({
-     _id: Number,
-     idno: {type:String , required:true},
+     id: {type:String , required:true},
      Firstname: {type:String , required:true}
-}, { _id: false });
-SubIDSchema.plugin(AutoIncrement);
+
+});
 
 module.exports = mongoose.model('SubID', SubIDSchema)
