@@ -16,6 +16,7 @@
     "express": "^4.16.4",
     "mongoose": "^5.4.17",
     "mongoose-auto-increment": "^5.0.1",
+    "mongoose-sequence": "^5.0.1",
     "node-telegram-bot-api": "^0.30.0"
   }
 }
