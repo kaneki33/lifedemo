@@ -6,7 +6,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 let Schema = mongoose.Schema
-autoIncrement.initialize(connection);
+autoIncrement.initialize(db);
 
 let SubIDSchema = new Schema({
      id: {type:String , required:true},
