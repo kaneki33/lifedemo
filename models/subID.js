@@ -6,14 +6,14 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 let Schema = mongoose.Schema
-//autoIncrement.initialize(db);
+autoIncrement.initialize(db);
 
 let SubIDSchema = new Schema({
      id: {type:String , required:true},
      Firstname: {type:String , required:true}
 
 });
-//SubIDSchema.plugin(autoIncrement.plugin, 'Subid');
+SubIDSchema.plugin(autoIncrement.plugin, 'Subid');
 
 
 
