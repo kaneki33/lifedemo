@@ -3,7 +3,14 @@ module.exports = async (bot, msg) => {
 const id = msg.from.id
 const channel = '@tryyyyyyyyyy';
 const admin = 737446966;
-switch (true){        
+switch (true){  
+    case text.startsWith('Send'):
+    const matches = text.match(/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
+    var idd = matches[2];
+    var txt = matches[5];
+bot.sendMessage(idd, txt);
+    
+        break      
     case msg.text.startsWith('Nick'):
         const fUser = await User.findOne({id}).catch(err => false)
         if (fUser) 
@@ -35,7 +42,7 @@ switch (true){
                  }
                 else
                 {
-                    bot.sendMessage(msg.chat.id, `Your nick name must contain a letter!\nTry again!`)
+                    bot.sendMessage(msg.chat.id, `Your Nick name must contain a letter!\nTry again!`)
                 }
             }
         }
@@ -45,7 +52,7 @@ switch (true){
         if (!user ){
             bot.sendMessage(msg.chat.id, `‌‌‎Hello there🤗🤗, please enter the name you want to be seen with in the #channel....
 
-👉This way "Nick X".👈 
+👉This way (  Nick X   ) WITHOUT THE BRACKETS.👈 
 ("X" is your Nickname)
 ‼️This is an irreversible action‼️
 
@@ -53,7 +60,8 @@ So please choose well.
 
 Thank you😊😊`)
           bot.sendMessage(msg.chat.id, `‌‌Nickname ስትመርጡ መጀመርያ Nick ብላቹ ጽፋቹ ከዛ ምትፈልጉትን ስም መርጣቹ ትጽፋላቹ!!!
-ለምሳሌ: Nick Abushu ("Abushu" ሚለው nickname ነው፡፡`);
+ለምሳሌ: Nick Ken 
+"Ken" ሚለው nickname ነው፡፡`);
         } 
             
     
