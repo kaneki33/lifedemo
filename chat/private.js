@@ -1,13 +1,14 @@
 const User     = require('../models/user')
+const admin = require('./admin')
 module.exports = async (bot, msg) => {
 const id = msg.from.id
 const channel = '@tryyyyyyyyyy';
-const admin = 737446966;
+const adminid = 737446966;
 switch (true){
     case (msg.from.id == '737446966' || msg.from.id == '383063938'):
         admin(bot, msg)
         break
-        case msg.text.startsWith('Nick'):
+    case msg.text.startsWith('Nick'):
         const fUser = await User.findOne({id}).catch(err => false)
         if (fUser) 
         {
@@ -33,7 +34,7 @@ switch (true){
                               bot.sendMessage(msg.chat.id, `Successfully saved ... welcome ${nick} 😍`)
                               bot.sendMessage(msg.chat.id, `Say Anything .. Have fun!\n${channel}`)
                         });
-                    bot.sendMessage(admin, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
+                    bot.sendMessage(adminid, `( ${nick} ) joined .. @${msg.from.username} ,${msg.from.first_name} ${msg.from.last_name} `);
                     bot.sendMessage(channel, `( ${nick} ) joined us .. Welcome ${nick} `);
                  }
                 else
@@ -44,22 +45,22 @@ switch (true){
         }
         break
     case msg.text != '' :
-        user = await User.findOne({id}).catch(err => false)
-        if (!user ){
-            bot.sendMessage(msg.chat.id, `‌‌‎Hello there🤗🤗, please enter the name you want to be seen with in the #channel....
+                user = await User.findOne({id}).catch(err => false)
+                if (!user ){
+                    bot.sendMessage(msg.chat.id, `‌‌‎Hello there🤗🤗, please enter the name you want to be seen with in the #channel....
 
-👉This way (  Nick X   ) WITHOUT THE BRACKETS.👈 
-("X" is your Nickname)
-‼️This is an irreversible action‼️
+        👉This way (  Nick X   ) WITHOUT THE BRACKETS.👈 
+        ("X" is your Nickname)
+        ‼️This is an irreversible action‼️
 
-So please choose well. 
+        So please choose well. 
 
-Thank you😊😊`)
-          bot.sendMessage(msg.chat.id, `‌‌Nickname ስትመርጡ መጀመርያ Nick ብላቹ ጽፋቹ ከዛ ምትፈልጉትን ስም መርጣቹ ትጽፋላቹ!!!
-ለምሳሌ: Nick Ken 
-"Ken" ሚለው nickname ነው፡፡`);
-        } 
-            
+        Thank you😊😊`)
+                bot.sendMessage(msg.chat.id, `‌‌Nickname ስትመርጡ መጀመርያ Nick ብላቹ ጽፋቹ ከዛ ምትፈልጉትን ስም መርጣቹ ትጽፋላቹ!!!
+        ለምሳሌ: Nick Ken 
+        "Ken" ሚለው nickname ነው፡፡`);
+                } 
+        break
     
     default:
         break
