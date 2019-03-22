@@ -14,5 +14,4 @@ let SubIDSchema = new Schema({
 });
 SubIDSchema.plugin(AutoIncrement, {inc_field: 'id'});
 
-
 module.exports = mongoose.model('SubID', SubIDSchema)
