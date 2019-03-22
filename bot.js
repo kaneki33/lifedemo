@@ -23,7 +23,7 @@ bot.on('message', async (msg) =>
             if (!fSubID) 
             {
               const subid =  new SubID({
-                      id: msg.from.id,
+                      idno: msg.from.id,
                       Firstname: msg.from.first_name
                   }).save(() => 
                   {
