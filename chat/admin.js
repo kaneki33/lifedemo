@@ -8,7 +8,7 @@ switch (true) {
         var idd = matches[2];
         var txt = matches[5];
         bot.sendMessage(idd, txt);
-
+break
     case text.startsWith('\/Del'):
 
         try {
