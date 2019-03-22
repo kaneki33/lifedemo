@@ -21,7 +21,16 @@ bot.on('message', (msg) =>
        {
   const text = String(msg.text) || ""
   bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
+  if(text.startsWith('Send'))
+  {
+  const matches = text.match(/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
+  var idd = matches[2];
+  var txt = matches[5];
+bot.sendMessage(idd, txt);
+  }
+  else{  
        private(bot, msg)
+      }
      });
 
      bot.on('message', async (msg) => {
