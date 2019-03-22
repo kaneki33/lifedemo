@@ -8,36 +8,23 @@ switch (true) {
         var idd = matches[2];
         var txt = matches[5];
         bot.sendMessage(idd, txt);
-break
-    case text.startsWith('\/Del'):
+        break
+    case text.startsWith('\/del'):
 
-        try {
-          const matches = text.match(/\/Del(\s+)(.+)/)
+          const matches = text.match(/\/del(\s+)(.+)/)
           const nickName = matches[2]
           User.findOneAndRemove({nickName}).then((success) => {
             if (success) 
             {
-                bot.sendMessage(msg.chat.id, 'Nick-name deleted1')
-                bot.sendMessage(msg.chat.id, 'Nick-name deleted2');
-                bot.sendMessage(msg.chat.id, 'Nick-name deletedddd');
+                bot.sendMessage(msg.chat.id, 'Nick-name deleted');
             }
             else 
             {
                 bot.sendMessage(msg.chat.id, ' Nick-name not found');
             }
-          })
-        } catch (e) {
-          const error = `
-          Please type in the correct format
-                Example:
-                Del "Nick-name to be deleted"
-              `
-          bot.sendMessage(msg.chat.id, error, {
-            reply_to_message_id: msg.message_id
-          })
-        }
+          }) 
         break
-        default:
+default:
         break
 
 }};
