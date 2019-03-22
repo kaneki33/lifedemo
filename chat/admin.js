@@ -1,4 +1,5 @@
 const User = require('../models/user')
+module.exports = async (bot, msg) => {
 switch (true) {
     case msg.text.startsWith('\/send'):
 
@@ -31,4 +32,4 @@ switch (true) {
         }
         break
 
-};
+}};
