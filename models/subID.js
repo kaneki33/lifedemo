@@ -12,6 +12,6 @@ let SubIDSchema = new Schema({
      Firstname: {type:String , required:true}
 
 });
-SubIDSchema.plugin(AutoIncrement, {inc_field: 'id'});
+SubIDSchema.plugin(AutoIncrement, {inc_field: 'IDno.'});
 
 module.exports = mongoose.model('SubID', SubIDSchema)
