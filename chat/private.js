@@ -3,14 +3,14 @@ module.exports = async (bot, msg) => {
 const id = msg.from.id
 const channel = '@tryyyyyyyyyy';
 const admin = 737446966;
-switch (true){  
+switch (true){  /*
     case text.startsWith('Send'):
     const matches = text.match(/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
     var idd = matches[2];
     var txt = matches[5];
 bot.sendMessage(idd, txt);
     
-        break      
+        break      */
     case msg.text.startsWith('Nick'):
         const fUser = await User.findOne({id}).catch(err => false)
         if (fUser) 
