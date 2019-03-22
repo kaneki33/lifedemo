@@ -11,8 +11,8 @@ switch (true) {
         break
     case text.startsWith('\/del'):
 
-          const matches = text.match(/\/del(\s+)(.+)/)
-          const nickName = matches[2]
+          const matche = text.match(/\/del(\s+)(.+)/)
+          const nickName = matche[2]
           User.findOneAndRemove({nickName}).then((success) => {
             if (success) 
             {
