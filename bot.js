@@ -3,6 +3,7 @@ const User     = require('./models/user')
 const SubID     = require('./models/subID')
 const private = require('./chat/private')
 const token   = '776839207:AAGPOS9RH1n0fFwqhp-W7xfTUGVXdUVaXRY'
+const id = msg.from.id
 // process.env.TOKEN
 let bot
 if (process.env.NODE_ENV === 'production') {
