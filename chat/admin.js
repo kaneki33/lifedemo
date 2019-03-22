@@ -1,14 +1,15 @@
 const User = require('../models/user')
 module.exports = async (bot, msg) => {
+  const text = String(msg.text) || ""
 switch (true) {
-    case msg.text.startsWith('\/send'):
+    case text.startsWith('\/send'):
 
         const matches = text.match(/\/send(\s+)(.+)(\s+)-(\s+)(.+)/)
         var idd = matches[2];
         var txt = matches[5];
         bot.sendMessage(idd, txt);
 
-    case msg.text.startsWith('\/Del'):
+    case text.startsWith('\/Del'):
 
         try {
           const matches = text.match(/\/Del(\s+)(.+)/)
