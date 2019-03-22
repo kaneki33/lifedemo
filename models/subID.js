@@ -8,7 +8,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 let Schema = mongoose.Schema
 
 let SubIDSchema = new Schema({
-     id: {type:String , required:true},
+     idno: {type:String , required:true},
      Firstname: {type:String , required:true}
 
 });
