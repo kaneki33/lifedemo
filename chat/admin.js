@@ -22,6 +22,8 @@ switch (true) {
             {
                 bot.sendMessage(msg.chat.id, ' Nick-name not found');
             }
+            bot.sendMessage(msg.chat.id, 'Nick-name deleteddddd');
+
           }) 
         break
 default:
