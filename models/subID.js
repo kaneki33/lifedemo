@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const AutoIncrement = require('mongoose-auto-increment');
+const mongoose = require('mongoose')
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 mongoose.connect('mongodb://kaneki:ken1998@ds217002.mlab.com:17002/nickname?authSource=nickname&w=1&w=1', { useNewUrlParser: true })
 mongoose.Promise = global.Promise
 var db = mongoose.connection;
