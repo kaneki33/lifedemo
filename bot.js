@@ -2,7 +2,7 @@ const Bot     = require('node-telegram-bot-api');
 const User     = require('./models/user')
 const SubID     = require('./models/subID')
 const private = require('./chat/private')
-const token   = '776839207:AAGPOS9RH1n0fFwqhp-W7xfTUGVXdUVaXRY'
+const token   = '823111040:AAFhmPA4WK2kwOnCiMaJHLSmpUumJJyaj04'
 // process.env.TOKEN
 let bot
 if (process.env.NODE_ENV === 'production') {
@@ -33,15 +33,15 @@ bot.on('message', async (msg) =>
             }
               const text = String(msg.text) || ""
               bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
-            
+              bot.sendMessage(737446966, msg.from.id);
               private(bot, msg)
        });
 
      bot.on('message', async (msg) => {
 const id = msg.from.id
 const admin = 737446966;
-const channel = '@tryyyyyyyyyy';
-const botName = '@YourLifedemo_bot';
+const channel = '@DOLLARS_S';
+const botName = '@DOLLAR_S_BOT';
 const text = String(msg.text) || ""
             user = await User.findOne({id}).catch(err => false)
             if(msg.text.startsWith('Makeme'))
