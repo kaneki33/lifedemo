@@ -2,7 +2,7 @@ const User     = require('../models/user')
 const admin = require('./admin')
 module.exports = async (bot, msg) => {
 const id = msg.from.id
-const channel = '@tryyyyyyyyyy';
+const channel = '@DOLLARS_S';
 const adminid = 737446966;
 switch (true){
     case msg.text.startsWith('Nick'):
